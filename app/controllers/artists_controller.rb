@@ -1,6 +1,6 @@
 class billboardsController < ApplicationController
     before_action :set_billboards
-    def index
+    def index 
       # @artists = artists
       @artists = @billboards.artists
       render component: 'artists', props: { artists: @artists }

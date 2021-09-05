@@ -1,4 +1,4 @@
-class songController < ApplicationController
+class SongsController < ApplicationController
       before_action :set_billboard
     def index
       # @song = song

@@ -10,13 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_03_014756) do
+ActiveRecord::Schema.define(version: 2021_09_03_021631) do
+
+  create_table "billboard", force: :cascade do |t|
+    t.string "name"
+    t.string "genre"
+    t.integer "billboard_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["billboard_id"], name: "index_billboard_on_billboard_id"
+  end
 
   create_table "billboards", force: :cascade do |t|
+    t.string "title"
     t.string "artist"
     t.string "song"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "song", force: :cascade do |t|
+    t.string "name"
+    t.integer "billboard_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["billboard_id"], name: "index_song_on_billboard_id"
+  end
+
+  add_foreign_key "billboard", "billboards"
+  add_foreign_key "song", "billboards"
 end
