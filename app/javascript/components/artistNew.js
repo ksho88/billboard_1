@@ -8,10 +8,3 @@ const artistNew = () => {
 }
 export default artistNew
 
-const artistCreate = () => {
-  return (
-    <div>
-    <h1> Artist Create </h1>
-    </div>  
-}
-export default artistCreate

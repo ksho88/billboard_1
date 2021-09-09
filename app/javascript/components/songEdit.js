@@ -8,10 +8,3 @@ const songEdit = () => {
 }
 export default songEdit
 
-const songUpdate = () => {
-  return (
-    <div>
-    <h1> Song Update </h1>
-    </div>  
-}
-export default songUpdate
